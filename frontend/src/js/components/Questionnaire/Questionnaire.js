@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
-import {Row, Col} from 'react-materialize'
+import {Row, Col, Button} from 'react-materialize'
 import Range from './Range.js'
 
 export default class SlidQuestionnaire extends React.Component {
@@ -30,6 +30,9 @@ export default class SlidQuestionnaire extends React.Component {
         <Row>
           <Col s={8} offset='s2'>
             <Slider {...settings}>
+              <div><h5>When completing the questionnaire, think about how you think and feel about yourself. </h5></div>
+              <div><h5>Be honest. There are no right or wrong answers and everyone will have different responses.</h5></div>
+              <div><h5>Answer the questions as you feel now, even if you have felt differently at some other time in your life.</h5></div>
               <div><h5><div className='Qbubble'><div className='Qnumber'>1. </div></div> I plan and use my time efficiently</h5>{range()}</div>
               <div><h5><div className='Qbubble'><div className='Qnumber'>2. </div></div> I am successful in social situations</h5></div>
               <div><h5><div className='Qbubble'><div className='Qnumber'>3. </div></div> When working on a project, I do my best to get the details right</h5></div>
@@ -54,6 +57,7 @@ export default class SlidQuestionnaire extends React.Component {
               <div><h5><div className='Qbubble'><div className='Qnumber'>22.</div></div> I stay calm when things go wrong</h5></div>
               <div><h5><div className='Qbubble'><div className='Qnumber'>23.</div></div> I like to be an active, ‘get into it’ person</h5></div>
               <div><h5><div className='Qbubble'><div className='Qnumber'>24.</div></div> I believe I can do it</h5></div>
+              <div><Button onClick={this.props.changeTabs.bind(this)} wave='light' large={true}> Submit Questionnaire</Button></div>
             </Slider>
           </Col>
         </Row>
