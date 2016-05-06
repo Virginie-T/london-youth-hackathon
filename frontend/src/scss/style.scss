@@ -197,7 +197,10 @@ input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
 }
-
+//questionaire tab
+.hidden {
+  display: none;
+}
 .start-button {
   height: 3em;
   width: 100%;
