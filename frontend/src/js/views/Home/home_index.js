@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Row, Tabs, Tab, Button, Input } from 'react-materialize'
 import Results from '../../components/Results/results_index.js'
+import SlideQuestionnaire from '../../components/Questionnaire/Questionnaire.js'
 
 class Home extends React.Component {
   constructor () {
@@ -72,7 +73,7 @@ class Home extends React.Component {
           </Tab>
 
             <Tab title='my LEQs' active={this.state.tab3}>
-              <Results results={this.state.results} /> 
+              <Results results={this.state.results} />
             </Tab>
             <Tab title='about the LEQ' active={this.state.tab4}>
               LEQ stands for the Life Effectiveness Questionaire.
