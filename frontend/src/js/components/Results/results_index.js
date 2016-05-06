@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Row, Col, Card, Modal} from 'react-materialize'
+import {Grid, Row, Col, Card, Modal, Button} from 'react-materialize'
 import Bubble from '../Bubble/index.js'
 
 const results = [
@@ -54,7 +54,15 @@ export default class Results extends React.Component {
         color={result.color}
         textColor="black"
       />
-    <p className='bubble-text'>{result.name}</p>
+      <Modal
+        header={result.name}
+        fixedFooter
+        trigger={
+          <Button waves='light'>{result.name}</Button>
+        }>
+        {result.name + ' ' + result.score}
+      </Modal>
+
     </Col>)
   }
 
