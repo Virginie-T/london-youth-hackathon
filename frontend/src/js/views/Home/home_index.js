@@ -14,7 +14,7 @@ class Home extends React.Component {
   render () {
     return (
       <Row>
-        <Col s={10} m={10} l={10} offset='s1 m1 l1'>
+        <Col s={8} m={8} l={8} offset='s2 m2 l2'>
           <Tabs className='tab-demo z-depth-1'>
             <Tab title='start LEQ' active={this.state.tab1}>
               <Row>
@@ -40,7 +40,7 @@ class Home extends React.Component {
                   <Input name='group1' type='checkbox' label='Do you have a disability or impairment' />
                 </Row>
                 <Row>
-                  <Input label='If yes please state' s={12} offset='s2 m2 l2' />
+                  <Input className='disability-question' label='If yes please state' s={12} offset='s2 m2 l2' />
                 </Row>
                 <Button  className='submit-button' waves='light' large={false}>Save</Button>
 
@@ -54,9 +54,14 @@ class Home extends React.Component {
 
               We use it to understand how young people think and feel about themselves.
               When you complete the LEQ, you will be asked a series of questions. Its not a test and there are no
-              no right or wrong answers. Everyone will have different responses. 
+              no right or wrong answers. Everyone will have different responses.
             </Tab>
           </Tabs>
+        </Col>
+        <Col s={2} m={2} l={2}>
+          <div className='logo-container'>
+            <img src='https://files.gitter.im/andrewMacmurray/london-youth-hackathon/eJwF/LY_Master_Mono_Black_RGB.png' />
+          </div>
         </Col>
     </Row>
     )
