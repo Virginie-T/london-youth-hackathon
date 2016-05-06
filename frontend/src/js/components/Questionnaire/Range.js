@@ -10,24 +10,16 @@ export default class SliderExampleSimple extends React.Component {
 
   handleChange (e, value) {
     this.setState({ value: value })
-    const newResults = {}
-    newResults[this.props.leqFactor] = value
-    this.props.changeState({
-      results: {
-        ...newResults
-      }
-    })
+    this.props.changeState(this.props.leqFactor, value)
   }
 
   render () {
-    console.log(this.state)
     return (
       <div>
         <Slider
           min={1}
           max={8}
           step={1}
-          value={this.state.value}
           onChange={this.handleChange}
           required
           defaultValue={5} />

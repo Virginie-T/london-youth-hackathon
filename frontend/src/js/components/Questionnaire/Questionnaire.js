@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
-import {Row, Col} from 'react-materialize'
+import {Row, Col, Button} from 'react-materialize'
 import Range from './Range.js'
 
 const qObjects = [
@@ -120,8 +120,8 @@ export default class Questionnaire extends React.Component {
           <div className='Qbubble'>
             <div className='Qnumber'>{i + 1}</div>
           </div>
-          <h5>I plan and use my time efficiently</h5>
-          <Range leqFactor={question.factor} />
+          <h5>{question.name}</h5>
+          <Range changeState={this.props.changeState} leqFactor={question.factor} />
         </div>
       )
     })
@@ -130,7 +130,13 @@ export default class Questionnaire extends React.Component {
       <div className='questionnaire'>
         <Row>
           <Col s={8} offset='s2'>
-            <Slider {...settings}>{questions}</Slider>
+            <Slider {...settings}>
+              <div><h5>When completing the questionnaire, think about how you think and feel about yourself. </h5></div>
+              <div><h5>Be honest. There are no right or wrong answers and everyone will have different responses.</h5></div>
+              <div><h5>Answer the questions as you feel now, even if you have felt differently at some other time in your life.</h5></div>
+              {questions}
+              <div><Button onClick={this.props.changeTabs.bind(this)} wave='light' large={true}> Submit Questionnaire</Button></div>
+            </Slider>
           </Col>
         </Row>
       </div>

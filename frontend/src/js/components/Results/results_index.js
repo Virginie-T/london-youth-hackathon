@@ -44,6 +44,7 @@ const results = [
     color: 'leq-yellow',
   }
 ]
+
 export default class Results extends React.Component {
   rowMaker (results) {
     return results.map((result, i) => <Col key={i} s={3} m={3} l={3}>
@@ -67,8 +68,16 @@ export default class Results extends React.Component {
   }
 
   render () {
-    const row1 = this.rowMaker(results.slice(0, 4))
-    const row3 = this.rowMaker(results.slice(4, results.length))
+    const processedResults = Object.keys(this.props.results).map((result, i) => {
+      return {
+        name: result,
+        score: Math.floor(this.props.results[result]/3),
+        color: results[i].color
+      }
+    })
+
+    const row1 = this.rowMaker(processedResults.slice(0, 4))
+    const row3 = this.rowMaker(processedResults.slice(4, results.length))
     return (
       <div className="results-container">
         <Row>{row1}</Row>
