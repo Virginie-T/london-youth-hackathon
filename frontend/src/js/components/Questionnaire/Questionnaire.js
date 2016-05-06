@@ -18,9 +18,9 @@ export default class SlidQuestionnaire extends React.Component {
 
     const range = () => {
       return (
-        <div class="range-slider">
-          <input class="range-slider__range" type="range" value="1" min="1" max="8" />
-          <span class="range-slider__value">0</span>
+        <div className="range-slider">
+          <input className="range-slider__range" type="range" value="1" min="1" max="8" />
+          <span className="range-slider__value">0</span>
         </div>
       )
     }
