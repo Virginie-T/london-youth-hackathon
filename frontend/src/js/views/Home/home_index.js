@@ -1,8 +1,9 @@
 import React from 'react'
 import { Col, Row, Tabs, Tab, Button, Input } from 'react-materialize'
 import Results from '../../components/Results/results_index.js'
-import Questionaire from '../../components/Questionnaire/Questionnaire.js'
+import Questionnaire from '../../components/Questionnaire/Questionnaire.js'
 import AboutSlider from '../../components/AboutSlider'
+
 class Home extends React.Component {
   constructor () {
     super()
@@ -14,17 +15,19 @@ class Home extends React.Component {
       buttonStatus: 'live',
       questionStatus: 'hidden',
       results: {
-        "Time Management": 0,
-        "Social Competence": 0,
-        "Achievement Motivation": 0,
-        "Intellectual Flexibility": 0,
-        "Task Leadership": 0,
-        "Emotional Control": 0,
-        "Active Initiative": 0,
-        "Self-Confidence": 0,
+        "Time Management": 16,
+        "Social Competence": 16,
+        "Achievement Motivation": 16,
+        "Intellectual Flexibility": 16,
+        "Task Leadership": 16,
+        "Emotional Control": 16,
+        "Active Initiative": 16,
+        "Self-Confidence": 16,
       }
     }
+    this.handleChange = this.handleChange.bind(this)
   }
+
   changeTabs() {
     console.log('function run')
     this.setState({
@@ -46,13 +49,14 @@ class Home extends React.Component {
     newResults[leqFactor] = score += this.state.results[leqFactor]
     this.setState({
       results: {
-        ...results,
+        ...this.state.results,
         ...newResults
       }
     })
   }
 
   render () {
+    console.log(this.state);
     return (
       <Row>
         <Col s={8} m={8} l={8} offset='s2 m2 l2'>
@@ -64,7 +68,7 @@ class Home extends React.Component {
                 </Col>
               </Row>
               <div className={this.state.questionStatus}>
-                <Questionaire changeTabs={this.changeTabs.bind(this)}/>
+                <Questionnaire changeState={this.handleChange} changeTabs={this.changeTabs.bind(this)}/>
               </div>
             </Tab>
             <Tab title='my details' active={this.state.tab2}>

@@ -1,26 +1,29 @@
-import React, { Component } from 'react';
-import Slider from 'react-rangeslider';
+import React, { Component } from 'react'
+import Slider from 'material-ui/lib/slider'
 
-export default class Range extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      value: 8
-    };
+export default class SliderExampleSimple extends React.Component {
+  constructor () {
+    super()
+    this.state = { value: 5 }
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(value) {
-    this.setState({
-      value: value
-    });
+  handleChange (e, value) {
+    this.setState({ value: value })
+    this.props.changeState(this.props.leqFactor, value)
   }
 
-  render() {
+  render () {
     return (
-      <Slider
-        value={8}
-        orientation="vertical"
-        onChange={this.handleChange} />
-    );
+      <div>
+        <Slider
+          min={1}
+          max={8}
+          step={1}
+          onChange={this.handleChange}
+          required
+          defaultValue={5} />
+      </div>
+    )
   }
 }
