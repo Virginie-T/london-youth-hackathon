@@ -1,5 +1,5 @@
 @import 'variables';
-@import 'bootstrap-navbar';
+@import 'bubbles';
 
 html {
   position: relative;
@@ -9,6 +9,7 @@ html {
 body {
   font-family: $main-font;
   margin-bottom: $footer-height;
+  background-color: $light-blue;
 }
 
 .about h3 {

@@ -4,63 +4,68 @@ import Bubble from '../Bubble/index.js'
 
 const results = [
   {
-    name: "confidence",
+    name: "Confidence",
     score: 8,
-    color: "#0083C3",
+    color: 'leq-blue',
   },
   {
-    name: "social competence",
+    name: "Social Competence",
     score: 3,
-    color: "#DB487E",
+    color: 'leq-red',
   },
   {
     name: "Love of Puzzles",
-    score: 9,
-    color: "#D5E739",
-  },
-  {
-    name: "confidence",
     score: 8,
-    color: "#0083C3",
+    color: 'leq-yellow',
   },
   {
-    name: "social competence",
+    name: "Confidence",
+    score: 8,
+    color: 'leq-blue',
+  },
+  {
+    name: "Social Competence",
     score: 3,
-    color: "#DB487E",
+    color: 'leq-orange',
   },
   {
     name: "Love of Puzzles",
-    score: 9,
-    color: "#D5E739",
+    score: 8,
+    color: 'leq-purple',
   },
   {
-    name: "social competence",
+    name: "Social Competence",
     score: 3,
-    color: "#DB487E",
+    color: 'leq-red',
   },
   {
     name: "Love of Puzzles",
-    score: 9,
-    color: "#D5E739",
+    score: 8,
+    color: 'leq-yellow',
   }
 ]
 export default class Results extends React.Component {
+  rowMaker (results) {
+    return results.map((result, i) => <Col key={i} s={2} m={2} l={2} offset={i === 0 ? "l2" : ""}>
+      <Bubble
+        size={result.score}
+        radius={result.score}
+        text={result.name}
+        color={result.color}
+        textColor="black"
+      />
+    <p className='bubble-text'>{result.name}</p>
+    </Col>)
+  }
+
   render () {
-    const circles = results.map((result, i) => {
-      return <Col key={i} s={1} m={1} l={1} offset={i === 0 ? "l1" : ""}>
-        <Bubble
-          size={result.score}
-          radius={result.score * 5}
-          text={result.name}
-          color={result.color}
-          textColor="black"
-        />
-      </Col>
-    })
+    const row1 = this.rowMaker(results.slice(0, 4))
+    const row2 = this.rowMaker(results.slice(4, results.length))
     return (
-      <Row>
-        {circles}
-      </Row>
+      <div>
+        <Row>{row1}</Row>
+        <Row>{row2}</Row>
+      </div>
     )
   }
 }
