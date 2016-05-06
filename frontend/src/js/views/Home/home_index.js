@@ -1,22 +1,20 @@
 import React from 'react'
-import { Col, Row } from 'react-materialize'
+import { Col, Row, Tabs, Tab, Button } from 'react-materialize'
 
 export default class Home extends React.Component {
   render () {
     return (
       <Row>
-        <Col s={1} className='grid-example'>1</Col>
-        <Col s={1} className='grid-example'>2</Col>
-        <Col s={1} className='grid-example'>3</Col>
-        <Col s={1} className='grid-example'>4</Col>
-        <Col s={1} className='grid-example'>5</Col>
-        <Col s={1} className='grid-example'>6</Col>
-        <Col s={1} className='grid-example'>7</Col>
-        <Col s={1} className='grid-example'>8</Col>
-        <Col s={1} className='grid-example'>9</Col>
-        <Col s={1} className='grid-example'>10</Col>
-        <Col s={1} className='grid-example'>11</Col>
-        <Col s={1} className='grid-example'>12</Col>
+        <Col s={10} m={10} l={10} offset='s1 m1 l1'>
+          <Tabs className='tab-demo z-depth-1'>
+            <Tab title="start LEQ" active>
+              <Button  className='start-button' waves='light' large={true}>Start LEQ</Button>
+            </Tab>
+            <Tab title="my details">my details</Tab>
+            <Tab title="my LEQs">my LEQs</Tab>
+            <Tab title="about the LEQ">about the LEQ</Tab>
+          </Tabs>
+        </Col>
     </Row>
     )
   }
