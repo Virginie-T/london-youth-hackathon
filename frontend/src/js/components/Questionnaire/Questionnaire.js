@@ -102,7 +102,7 @@ const qObjects = [
   }
 ]
 
-export default class SlideQuestionnaire extends React.Component {
+export default class Questionnaire extends React.Component {
   render () {
     var settings = {
       dots: true,
@@ -116,24 +116,21 @@ export default class SlideQuestionnaire extends React.Component {
 
     const questions = qObjects.map((question, i) => {
       return (
-      <div>
-        <div className='Qbubble'>
-          <div className='Qnumber'>{i + 1} </div>
+        <div>
+          <div className='Qbubble'>
+            <div className='Qnumber'>{i + 1}</div>
+          </div>
+          <h5>I plan and use my time efficiently</h5>
+          <Range leqFactor={question.factor} />
         </div>
-        <h5>
-          I plan and use my time efficiently
-        </h5>
-        <Range leqFactor={question.factor} />
-      </div>)
+      )
     })
 
     return (
       <div className='questionnaire'>
         <Row>
           <Col s={8} offset='s2'>
-            <Slider {...settings}>
-              {questions}
-            </Slider>
+            <Slider {...settings}>{questions}</Slider>
           </Col>
         </Row>
       </div>

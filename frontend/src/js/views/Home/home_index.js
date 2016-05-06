@@ -1,7 +1,8 @@
 import React from 'react'
 import { Col, Row, Tabs, Tab, Button, Input } from 'react-materialize'
 import Results from '../../components/Results/results_index.js'
-import SlideQuestionnaire from '../../components/Questionnaire/Questionnaire.js'
+import Questionnaire from '../../components/Questionnaire/Questionnaire.js'
+import AboutSlider from '../../components/AboutSlider'
 
 class Home extends React.Component {
   constructor () {
@@ -11,6 +12,7 @@ class Home extends React.Component {
       tab2: true,
       tab3: false,
       tab4: false,
+
       results: {
         "Time Management": 0,
         "Social Competence": 0,
@@ -67,7 +69,6 @@ class Home extends React.Component {
                   <Input className='disability-question' label='If yes please state' s={12} offset='s2 m2 l2' />
                 </Row>
                 <Button  className='submit-button' waves='light' large={false}>Save</Button>
-
               </Col>
             </Row>
           </Tab>
@@ -76,11 +77,7 @@ class Home extends React.Component {
               <Results results={this.state.results} />
             </Tab>
             <Tab title='about the LEQ' active={this.state.tab4}>
-              LEQ stands for the Life Effectiveness Questionaire.
-
-              We use it to understand how young people think and feel about themselves.
-              When you complete the LEQ, you will be asked a series of questions. Its not a test and there are no
-              no right or wrong answers. Everyone will have different responses.
+              <AboutSlider />
             </Tab>
           </Tabs>
         </Col>
@@ -95,3 +92,9 @@ class Home extends React.Component {
 }
 
 export default Home
+
+// LEQ stands for the Life Effectiveness Questionaire.
+//
+// We use it to understand how young people think and feel about themselves.
+// When you complete the LEQ, you will be asked a series of questions. Its not a test and there are no
+// no right or wrong answers. Everyone will have different responses.
