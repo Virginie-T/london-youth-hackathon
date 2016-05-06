@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Row, Tabs, Tab, Button, Input } from 'react-materialize'
+import Results from '../../components/Results/results_index.js'
 
 class Home extends React.Component {
   constructor () {
@@ -8,9 +9,31 @@ class Home extends React.Component {
       tab1: false,
       tab2: true,
       tab3: false,
-      tab4: false
+      tab4: false,
+      results: {
+        "Time Management": 0,
+        "Social Competence": 0,
+        "Achievement Motivation": 0,
+        "Intellectual Flexibility": 0,
+        "Task Leadership": 0,
+        "Emotional Control": 0,
+        "Active Initiative": 0,
+        "Self-Confidence": 0,
+      }
     }
   }
+
+  handleChange (leqFactor, score) {
+    const newResults = {}
+    newResults[leqFactor] = score += this.state.results[leqFactor]
+    this.setState({
+      results: {
+        ...results,
+        ...newResults
+      }
+    })
+  }
+
   render () {
     return (
       <Row>
@@ -48,7 +71,9 @@ class Home extends React.Component {
             </Row>
           </Tab>
 
-            <Tab title='my LEQs' active={this.state.tab3}>my LEQs</Tab>
+            <Tab title='my LEQs' active={this.state.tab3}>
+              <Results results={this.state.results} /> 
+            </Tab>
             <Tab title='about the LEQ' active={this.state.tab4}>
               LEQ stands for the Life Effectiveness Questionaire.
 

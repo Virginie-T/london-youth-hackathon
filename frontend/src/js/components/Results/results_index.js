@@ -46,7 +46,7 @@ const results = [
 ]
 export default class Results extends React.Component {
   rowMaker (results) {
-    return results.map((result, i) => <Col key={i} s={2} m={2} l={2} offset={i === 0 ? "l2" : ""}>
+    return results.map((result, i) => <Col key={i} s={3} m={3} l={3}>
       <Bubble
         size={result.score}
         radius={result.score}
@@ -68,11 +68,11 @@ export default class Results extends React.Component {
 
   render () {
     const row1 = this.rowMaker(results.slice(0, 4))
-    const row2 = this.rowMaker(results.slice(4, results.length))
+    const row3 = this.rowMaker(results.slice(4, results.length))
     return (
-      <div>
+      <div className="results-container">
         <Row>{row1}</Row>
-        <Row>{row2}</Row>
+        <Row>{row3}</Row>
       </div>
     )
   }
