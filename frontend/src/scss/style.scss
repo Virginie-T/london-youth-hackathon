@@ -1,5 +1,5 @@
 @import 'variables';
-@import 'bootstrap-navbar';
+@import 'bubbles';
 
 html {
   position: relative;
@@ -9,6 +9,7 @@ html {
 body {
   font-family: $main-font;
   margin-bottom: $footer-height;
+  background-color: $light-blue;
 }
 
 .about h3 {
@@ -66,7 +67,7 @@ body {
 
 
 
-/*****************************************/
+/****************** RANGE SLIDER ***********************/
 
 // Base Colors
 $shade-10: #2c3e50 !default;
@@ -191,6 +192,9 @@ $range-label-width: 60px !default;
 }
 
 
+/*********************** FORM DETAIL *************************/
+
+
 // Firefox Overrides
 ::-moz-range-track {
     background: $range-track-color;
@@ -200,4 +204,64 @@ $range-label-width: 60px !default;
 input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
+}
+
+.start-button {
+  height: 3em;
+  width: 100%;
+  font-size: 2em;
+  margin-top: 3em;
+  background-color: #167378;
+}
+
+.tab {
+  background-color: #d5e739;
+}
+.tabs .tab a {
+  color: white;
+}
+
+.tabs .tab a:hover {
+  color: #4ccede;
+}
+.tabs .indicator {
+  background-color: #d5e739;
+}
+.formContainer {
+  margin-top: 3em;
+}
+.btn {
+  background-color: #167378;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #d5e739;
+    box-shadow: 0 1px 0 0 #d5e739;
+}
+input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #d5e739;
+}
+
+.input-field label {
+  color: white;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  border-bottom: 1px solid white;
+}
+.disability-question {
+  color: white;
+}
+
+label {
+  color: white;
+}
+.logo-container {
+  margin: none;
+  width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
 }
